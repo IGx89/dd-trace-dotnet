@@ -23,6 +23,22 @@
                 <th scope="row">Datadog.Trace.dll path</th>
                 <td>@(Model.TracerAssemblyLocation ?? "(not found)")</td>
             </tr>
+            <tr>
+                <th scope="row">W3C traceparent</th>
+                <td>@(Request.Headers["traceparent"].ToString())</td>
+            </tr>
+            <tr>
+                <th scope="row">Activity ID</th>
+                <td>@(System.Diagnostics.Activity.Current.Id)</td>
+            </tr>
+            <tr>
+                <th scope="row">DD Trace ID</th>
+                <td>@(Datadog.Trace.CorrelationIdentifier.TraceId.ToString())</td>
+            </tr>
+            <tr>
+                <th scope="row">DD Span ID</th>
+                <td>@(Datadog.Trace.CorrelationIdentifier.SpanId.ToString())</td>
+            </tr>
         </tbody>
     </table>
 </div>

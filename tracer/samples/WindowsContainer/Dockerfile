@@ -16,6 +16,9 @@ ENV COR_PROFILER="{846F5F1C-F9AE-4B07-969E-05C26BC060D8}"
 ENV CORECLR_ENABLE_PROFILING="1"
 ENV CORECLR_PROFILER=$COR_PROFILER
 
+# Enable interoperability with .NET's Activity type
+ENV DD_TRACE_OTEL_ENABLED="true"
+
 # We recommend always using the latest release and regularly updating: https://github.com/DataDog/dd-trace-dotnet/releases/latest
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
